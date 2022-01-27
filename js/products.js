@@ -21,7 +21,6 @@ const app = createApp({
       axios
         .get(url)
         .then((res) => {
-          console.log(res.data);
           this.products = res.data.products;
         })
         .catch((err) => {
@@ -37,9 +36,8 @@ const app = createApp({
           this.getData();
         })
         .catch((err) => {
-          // alert(err.data.message);
           console.dir(err);
-          // window.location = "index.html";
+          window.location = "index.html";
         });
     },
     // 透過參數 isState，來判斷是新增還是編輯還是刪除狀態
