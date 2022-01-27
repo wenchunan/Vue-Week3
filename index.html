@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>login Page</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/login.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="container">
+        <div class="row justify-content-center">
+          <h1 class="h3 mb-3">請先登入</h1>
+          <div class="col-8">
+            <form id="form" class="form-input" @submit.prevent="login">
+              <div class="form-floating mb-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="emailInput"
+                  placeholder="name@example.com"
+                  v-model="user.username"
+                  required
+                  autofocus
+                />
+                <label for="emailInput">Email address</label>
+              </div>
+              <div class="form-floating">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="passwordInput"
+                  placeholder="password"
+                  v-model="user.password"
+                  required
+                />
+                <label for="passwordInput">Password</label>
+              </div>
+              <button type="submit" class="btn btn-primary btn-lg w-100 mt-3">
+                登入
+              </button>
+            </form>
+          </div>
+        </div>
+        <p class="text-muted">&copy; 2021~∞ - 六角學院</p>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./js/login.js" type="module"></script>
+  </body>
+</html>
