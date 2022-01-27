@@ -108,7 +108,7 @@ const app = createApp({
 
     // 取出 Token
     const token = document.cookie.replace(
-      /(?:(?:^|.*;\s*)annaToken\s*=\s*([^;]*).*$)|^.*$/,
+      /(?:(?:^|.*;\s*)annaToken\s*\=\s*([^;]*).*$)|^.*$/,
       "$1"
     );
 
