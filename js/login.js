@@ -18,7 +18,7 @@ const app = createApp({
         .post(url, this.user)
         .then((res) => {
           const { token, expired } = res.data;
-          document.cookie = `annawen=true; expires=${new Date(expired)}; `;
+          document.cookie = `annaToken=${token}; expires=new Date=${expired} `;
           alert(res.data.message);
           window.location = "products.html";
         })
