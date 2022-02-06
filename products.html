@@ -92,7 +92,9 @@
                       </div>
                       <img :src="image" class="img-fluid">
                     </div>
-
+                    
+                    <!-- !tempProduct.imagesUrl.length 如果不是空的 -->
+                    <!-- tempProduct.imagesUrl[tempProduct.imagesUrl.length-1] 如果陣列有內容 -->
                    <div v-if="!tempProduct.imagesUrl.length || tempProduct.imagesUrl[tempProduct.imagesUrl.length-1]">
                     <button type="button" class="btn btn-outline-primary btn-sm d-block w-100" @click="tempProduct.imagesUrl.push('')">新增圖片</button>
                   </div>

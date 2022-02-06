@@ -17,7 +17,7 @@ const app = createApp({
   methods: {
     // get產品資料
     getData() {
-      const url = `${this.apiUrl}/v2/api/${this.apiPath}/admin/products/all`;
+      const url = `${this.apiUrl}v2/api/${this.apiPath}/admin/products/all`;
       axios
         .get(url)
         .then((res) => {
@@ -29,7 +29,7 @@ const app = createApp({
     },
     // 驗證
     checkAdmin() {
-      const url = `${this.apiUrl}/v2/api/user/check`;
+      const url = `${this.apiUrl}v2/api/user/check`;
       axios
         .post(url)
         .then(() => {
@@ -51,7 +51,7 @@ const app = createApp({
         this.isNew = true;
         productModal.show();
       } else if (isState === "edit") {
-        this.tempProduct = { ...item };
+        this.tempProduct = JSON.parse(JSON.stringify(item));
         this.isNew = false;
         productModal.show();
       } else if (isState === "delete") {
@@ -75,7 +75,7 @@ const app = createApp({
           productModal.hide();
           this.getData();
         })
-        .catch((err) => alert(err.data.message));
+        .catch((err) => alert(err.response.data.message));
     },
     // 刪除指定資料
     delProduct() {
